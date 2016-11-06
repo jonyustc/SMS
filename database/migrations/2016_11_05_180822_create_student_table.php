@@ -19,7 +19,8 @@ class CreateStudentTable extends Migration
             $table->string("mother_name");
             $table->string("gender");
             $table->date("Date_of_Birth");
-            $table->integer("class_id");
+            $table->integer("class_id")->unsigned();
+            $table->integer("user_id")->unsigned();
             $table->integer("roll");
             $table->string("address");
             $table->integer("phone");
