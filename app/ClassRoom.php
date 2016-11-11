@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ClassRoom extends Model
+class Classroom extends Model
 {
-
-	protected $fillable = ['class_name','section'];
     //
+    protected $fillable = ['class_name'];
+
     public function students()
     {
-    	return $this->hasMany('App\Student');
+        return $this->hasMany('App\UserInfo');
     }
 }

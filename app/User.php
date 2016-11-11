@@ -24,19 +24,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function student()
+
+    public function roles()
     {
-        return $this->belongsTo('App\Student');
+        return $this->belongsToMany('App\Role','user_role','user_id','role_id');
     }
 
-    public function teacher()
-    {
-        return $this->belongsTo('App\Teacher');
+    public function userinfos(){
+        return $this->hanMany('App\UserInfo');
     }
+
 
     public function studentinfo($classID)
     {
-        $students = Student::wherenull('section_id')->where('class_id',$classID)->get();
+        $students = Student()->where('class_id',$classID)->get();
         return $students;
     }
 
