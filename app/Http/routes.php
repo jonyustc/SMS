@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['web']], function()
+{
+	Route::auth();
+
+	Route::get('/',function(){
+		return redirect('/dashboard');
+	});
+	Route::get('/dashboard', 'HomeController@index');
 });
 
-Route::auth();
 
-Route::get('/home', 'HomeController@index');

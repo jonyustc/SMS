@@ -21,7 +21,7 @@ class UserTableSeeder extends Seeder
         $user1 = new User();
         $user1->name = "student";
         $user1->email = "student@gmail.com";
-        $user1->password = "714170";
+        $user1->password = bcrypt("714170");
         $user1->save();
         $last_user_id = DB::table('users')->latest()->value('id');
         DB::table('user_infos')->insert([
@@ -33,7 +33,7 @@ class UserTableSeeder extends Seeder
         $user2 = new User();
         $user2->name = "teacher";
         $user2->email = "teacher@gmail.com";
-        $user2->password = "123456";
+        $user2->password = bcrypt("123456");
         $user2->save();
         $last_user_id = DB::table('users')->latest()->value('id');
         DB::table('user_infos')->insert(['user_id' => $last_user_id]);
@@ -42,7 +42,7 @@ class UserTableSeeder extends Seeder
         $user3 = new User();
         $user3->name = "admin";
         $user3->email = "admin@gmail.com";
-        $user3->password = "123456";
+        $user3->password = bcrypt("123456");
         $user3->save();
         $last_user_id = DB::table('users')->latest()->value('id');
          DB::table('user_infos')->insert(['user_id' => $last_user_id]);
@@ -51,7 +51,7 @@ class UserTableSeeder extends Seeder
         $user4 = new User();
         $user4->name = "student_two";
         $user4->email = "student_two@gmail.com";
-        $user4->password = "714170";
+        $user4->password = bcrypt("714170");
         $user4->save();
         $last_user_id = DB::table('users')->latest()->value('id');
         DB::table('user_infos')->insert([
@@ -63,7 +63,7 @@ class UserTableSeeder extends Seeder
         $user5 = new User();
         $user5->name = "teacher_two";
         $user5->email = "teacher_two@gmail.com";
-        $user5->password = "123456";
+        $user5->password = bcrypt("123456");
         $user5->save();
         $last_user_id = DB::table('users')->latest()->value('id');
         DB::table('user_infos')->insert(['user_id' => $last_user_id]);
@@ -73,7 +73,7 @@ class UserTableSeeder extends Seeder
         $user6 = new User();
         $user6->name = "admin_two";
         $user6->email = "admin_two@gmail.com";
-        $user6->password = "123456";
+        $user6->password = bcrypt("123456");
         $user6->save();
         $last_user_id = DB::table('users')->latest()->value('id');
          DB::table('user_infos')->insert(['user_id' => $last_user_id]);

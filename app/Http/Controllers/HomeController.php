@@ -22,6 +22,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function welcome()
+    {
+        return view('welcome');
+    }
     public function index()
     {
         return view('home');
